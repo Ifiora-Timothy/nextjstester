@@ -1,7 +1,7 @@
 "use client";
 import { FFmpeg, FFmpegConfiguration } from "@diffusion-studio/ffmpeg-js";
 
-import { PropsWithChildren, use, useEffect, useRef, useState } from "react";
+import { PropsWithChildren, useEffect, useRef, useState } from "react";
 import { createContext } from "react";
 
 type FFmpegContextType = {
