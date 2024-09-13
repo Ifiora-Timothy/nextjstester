@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { FfmpegProvider } from "@/providers/FfmpegContext";
+import { FfmpegTranscodeProvider } from "@/providers/FfmpegTranscodeContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +30,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <FfmpegProvider>
+          <FfmpegTranscodeProvider>{children}</FfmpegTranscodeProvider>
+        </FfmpegProvider>
       </body>
     </html>
   );
